@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini React Engine</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="module">
+    import { createElement, renderToDOM } from "./mini-react.js";
+    import "./test-runner.js"; 
+
+    const app = createElement(
+      "main",
+      { id: "root-view", role: "main" },
+
+      createElement(
+        "header",
+        { className: "hero" },
+        createElement("h1", null, "Mini React Engine"),
+        createElement(
+          "p",
+          null,
+          "This page is rendered by our own engine."
+        )
+      ),
+
+      createElement(
+        "section",
+        { id: "demo-section" },
+        createElement(
+          "p",
+          null,
+          "Safe text: <img onerror=alert(1)>"
+        ),
+        createElement(
+          "button",
+          {
+            id: "ping-btn",
+            onClick: () => console.log("Ping!")
+          },
+          "Click me"
+        )
+      )
+    );
+
+    document
+      .getElementById("app")
+      .replaceChildren(renderToDOM(app));
+  </script>
+</body>
+</html>
