@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 - Reactive Task Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 16px;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    article {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+      padding: 12px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    article span {
+      flex: 1;
+    }
+
+    button[aria-pressed="true"] {
+      background: #2563eb;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
